@@ -15,8 +15,11 @@ predictions = df['active']
 
 # Create a Gaussian Classifier
 model = GaussianNB()
-
+print('Training the model ...')
 # Train the model using the training sets
 model.fit(features, predictions)
+print('Training complete ....')
 
+print('Saving model to ./model/ActiveVsReflective.model ....')
 pickle.dump(model, open('./model/ActiveVsReflective.model', 'wb'))
+print('done ...')
